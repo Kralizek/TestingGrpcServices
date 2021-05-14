@@ -13,9 +13,19 @@ service Greeter {
 // The request message containing the user's name.
 message HelloRequest {
   string name = 1;
+  repeated .greet.Language languages = 2;
 }
 
 // The response message containing the greetings.
 message HelloReply {
-  string message = 1;
+  map<string,string> messages = 2;
+}
+
+enum Language
+{
+	English = 0;
+	Italian = 1;
+	Swedish = 2;
+	French = 3;
+	Spanish = 4;
 }
